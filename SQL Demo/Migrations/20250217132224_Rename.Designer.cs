@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SQL_Demo.Models;
 
@@ -10,9 +11,11 @@ using SQL_Demo.Models;
 namespace SQL_Demo.Migrations
 {
     [DbContext(typeof(SnusDBContext))]
-    partial class SnusDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250217132224_Rename")]
+    partial class Rename
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
