@@ -67,7 +67,7 @@ namespace SQL_Demo
 
                 snus.Name = oldSnus.Name;
                 snus.Brand = oldSnus.Brand;
-                snus.Pris = oldSnus.Pris;
+                snus.Price = oldSnus.Price;
                 snus.Quantity = oldSnus.Quantity;
 
                 await db.SaveChangesAsync();
