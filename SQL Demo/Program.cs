@@ -13,17 +13,6 @@ namespace SQL_Demo
             builder.Services.AddDbContext<SnusDBContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            builder.Services.AddCors(options =>
-            {
-                options.AddPolicy("AllowAll",
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin()
-                               .AllowAnyMethod()
-                               .AllowAnyHeader();
-                    });
-            });
-
             // Add services to the container.
             builder.Services.AddAuthorization();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -38,8 +27,6 @@ namespace SQL_Demo
 
             app.UseSwagger();
             app.UseSwaggerUI();
-
-            app.UseCors("AllowAll");
 
             app.UseHttpsRedirection();
             app.UseAuthorization();
